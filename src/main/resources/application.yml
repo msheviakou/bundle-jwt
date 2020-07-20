@@ -1,0 +1,18 @@
+server:
+  port: ${SERVER_PORT:8013}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/bundlejwt}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    properties:
+      hibernate:
+        default_schema: public
+
+jwt:
+  accessTokenSecretKey: ${ACCESS_TOKEN_SECRET_KEY:access}
+  refreshTokenSecretKey: ${REFRESH_TOKEN_SECRET_KEY:refresh}
+  accessTokenValidityInMilliseconds: ${ACCESS_TOKEN_VALIDITY:3600000}
+  refreshTokenValidityInMilliseconds: ${REFRESH_TOKEN_VALIDITY:36000000}
